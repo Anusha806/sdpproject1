@@ -1,0 +1,16 @@
+
+{% extends 'Navbar/librarypatronsnavbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You</title>
+</head>
+<body>
+{% block body %}
+            {% csrf_token %}
+
+<h1>Thank you</h1>
+ {% endblock %}
+</body>
+</html>

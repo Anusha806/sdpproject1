@@ -1,0 +1,28 @@
+{% extends 'Navbar/librariannavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-left">
+        <div class = "col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p>Are you sure you want to delete "{{book_details.BookTitle}}"?</p>
+                    <form method="post" action="{% url 'librarian:delete_book_details' book_details.id%}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

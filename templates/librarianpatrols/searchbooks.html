@@ -1,0 +1,35 @@
+
+{% extends 'Navbar/librarypatronsnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+  <h2>Book Details List</h2>
+    <div class="row">
+        {% for book_details in book_details_list %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book_details.BookTitle}}</h5>
+                  <p>
+                    <strong>BookId</strong>{{ book_details.BookId }}<br>
+                    <strong>BookYear</strong>{{ book_details.BookYear }}<br>
+                    <strong>published_year</strong>{{ book_details.published_year }}<br>
+                    <strong>Remarks</strong>{{ book_details.remarks }}<br>
+
+                  </p>
+                    <a href="{% url 'librarypatrons:get_the_book' book_details.id %}" class="btn btn-success">Get This Book</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

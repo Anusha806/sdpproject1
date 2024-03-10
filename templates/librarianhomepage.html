@@ -1,0 +1,62 @@
+{% extends 'Navbar/librariannavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+</head>
+<body>
+{% block body %}
+<!--<header>-->
+<!--        <h1>Welcome {{user.username}}</h1>-->
+<!--    </header>-->
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col">
+        <br>
+        <br>
+        <br><br>
+        <br>         <br><br><br>
+        <img src = "{% static 'images/1234.jpg' %}" alt="My image" width="600" height="300"/>
+        <br> <br>
+      <h1>Welcome to Library Management System {{user.username}}</h1>
+    </div>
+      <div  align="center" class="col">
+              <h1>Manage Books</h1>
+          <br><br><br><br>
+          <div class="row">
+  <div class="col-sm-6">
+          <div class="card border-primary border-2" style="width: 20rem;" >
+  <img src="{% static 'images/picture4.jpeg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">CSE Books</p>
+  </div>
+</div>
+  </div>
+          <br><br>
+               <div class="col-sm-6">
+          <div class="card border-primary border-2" style="width: 19rem;" >
+  <img src="{% static 'images/picture5.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">ECE Books</p>
+  </div>
+</div>
+               </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<br><br><br>
+<!--<center>-->
+<!--    <div class="d-grid gap-2 col-6 mx-auto">-->
+<!--<button type="button" class="btn btn-primary btn-lg">Explore More Travel Packages</button>-->
+<!--    </div>-->
+<!--    </center>-->
+<br><br><br><br><br><br>
+{% endblock %}
+</body>
+</html>
+

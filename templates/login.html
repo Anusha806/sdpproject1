@@ -1,0 +1,33 @@
+{% extends 'Navbar/projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginPage</title>
+</head>
+<body>
+{% block body %}
+{% if messages %}
+{% for message in messages %}
+{% if message.tags %}
+<script>alert ("{{message}}")</script>
+{% endif %}
+{% endfor %}
+{% endif %}
+<div class="container1" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-image: url('{% static "images/123.jpg" %}'); background-size: cover;">
+    <div class="bodycontainer" style="display: inline-block; border: 1px solid #ccc; padding: 20px; border-radius: 5px; background-color: #FFE7D9;">
+        <h1>LoginPage</h1>
+        <form method ="post" action="{% url 'login1' %}" style="display: inline-block; text-align:left;">
+            {% csrf_token %}
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter the username"><br><br>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter the Password"><br><br>
+            <button type="submit" name="SUBMIT" style="display: block; margin: 0 auto;" >Login</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

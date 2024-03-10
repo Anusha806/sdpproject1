@@ -1,0 +1,47 @@
+{% extends 'Navbar/librariannavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Books</title>
+</head>
+<body>
+{% block body %}
+<div>
+    <div class = "container mt-5" >
+        <h3> Book Details Form</h3>
+        <form method="post" action="{% url 'librarian:add_book_details' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for = "BookTitle">Book Title</label>
+                <input type = "text" class = "form-control" name="BookTitle" id = "BookTitle" placeholder="Enter the book title">
+            </div>
+            <div class="form-group">
+                <label for = "BookId">Book Id</label>
+                <input type = "text" class = "form-control" name="BookId" id = "BookId" placeholder="Enter the book Id">
+            </div>
+            <div class="form-group">
+                <label for = "BookYear">Book Year</label>
+                <select class = "form-control" name="BookYear" id = "BookYear" placeholder="Enter the book Year">
+                    <option value="1st Year">1st yr</option>
+                    <option value="2nd Year">2nd yr</option>
+                    <option value="3rd Year">3rd yr</option>
+                    <option value="4th Year">4th yr</option>
+                </select>
+                <div class="form-group">
+                <label for = "published_year">Published Year</label>
+                <input type = "text" class = "form-control" name="published_year" id = "published_year" placeholder="Enter the published year">
+                </div>
+                    <div class = "form-group">
+                    <label for = "remarks">Remarks</label>
+                    <textarea class = "form-control" name = "remarks" id = "remarks" rows = "2" placeholder="Enter your remarks"></textarea>
+                    </div>
+
+                <button type="submit" class="btn btn-success">Post the Book</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

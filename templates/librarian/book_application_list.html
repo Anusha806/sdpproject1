@@ -1,0 +1,53 @@
+{% extends 'Navbar/librariannavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Applications</title>
+</head>
+<body>
+{% block body %}
+    <h1>Book Applicants List</h1>
+    <table border="2">
+        <thead>
+         <tr>
+             <th>Name</th>
+             <th>Email</th>
+             <th>ID Card</th>
+            <th>Action </th>
+         </tr>
+        </thead>
+        <tbody>
+            {% for book_application in book_applications %}
+        <tr>
+           <td>{{book_application.name}}</td>
+            <td>{{book_application.email}}</td>
+
+            <td>
+                {% if book_application.id_document %}
+                <a href="{{book_application.id_document.url}}" target="_blank">Download ID</a>
+                {% else %}
+                No ID uploaded
+                {% endif %}
+            </td>
+            <td>
+                <a href="#" class="btn btn-success">Schedule Return Date</a>
+                <a href ="#" class="btn btn-danger">Application Rejected</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <style>
+        table,th,td {
+        border:2px solid black;
+        }
+    </style>
+    {%endblock %}
+
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+{% extends 'Navbar/librariannavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        {% for book_details in book_details_list %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book_details.BookTitle}}</h5>
+                    <p class="card-text">BookId {{ book_details.BookId }}</p>
+                    <p class="card-text">BookYear {{ book_details.BookYear }}</p>
+                    <p class="card-text">published_year {{ book_details.published_year }}</p>
+                    <p class="card-text">Remarks {{ book_details.remarks }}</p>
+
+                    <a href="{% url 'librarian:edit_book_details' book_details.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'librarian:delete_book_details' book_details.id %}" class="btn btn-danger">Delete</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% extends 'Navbar/librarypatronsnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+
+<body>
+{% block body %}
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <title>Book Application Form</title>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Book Application Form</h2>
+  <form method="post" action="{% url 'librarypatrons:submit_form' %}">
+    {% csrf_token %}
+
+    <div class="profile">
+      <p>First Name: {{ user.first_name }}</p>
+      <p>Last Name: {{ user.last_name }}</p>
+      <p>Phone Number: {{ user.phone_number }}</p>
+      <p>Branch: {{ user.Branch }}</p>
+      <p>Year: {{ user.year }}</p>
+    </div>
+
+    <div class-name="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="first_name">First Name</label>
+        <input type="text" class="form-control" name ='first_name' id="first_name" value="{{ user.first_name }}" placeholder="Enter your first name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control" name ='last_name' id="last_name" value="{{ user.last_name }}" placeholder="Enter your last name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone_number">Phone Number</label>
+      <input type="tel" class="form-control" name ='phone_number' id="phone_number" value="{{ user.phone_number }}" placeholder="Enter your phone number">
+    </div>
+
+    <div class="form-group">
+        <label for="Branch">Branch:</label>
+        <select class="form-control" name="Branch" required>
+          <option value="CSE" {% if user.Branch == 'CSE' %}selected{% endif %}>CSE</option>
+          <option value="ECE" {% if user.Branch == 'ECE' %}selected{% endif %}>ECE</option>
+          <option value="EEE" {% if user.Branch == 'EEE' %}selected{% endif %}>EEE</option>
+          <option value="AgBSC" {% if user.Branch == 'AgBSC' %}selected{% endif %}>AgBSC</option>
+
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Year">Year:</label>
+        <select class="form-control" name="Year" required>
+          <option value="1styear" {% if user.Year == '1st yr' %}selected{% endif %}>1st yr</option>
+          <option value="2ndyear" {% if user.Branch == '2nd yr' %}selected{% endif %}>2nd yr</option>
+          <option value="3rdyear" {% if user.Year == '3rd yr' %}selected{% endif %}>3rd yr</option>
+          <option value="4thyear" {% if user.Year == '4th yr' %}selected{% endif %}>4th yr</option>
+
+        </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br><br><br><br><br>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

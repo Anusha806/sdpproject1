@@ -55,6 +55,8 @@ pip install pyqt5
 command to install all dependencies at once:
 
 pip install opencv-python pandas pytesseract pyqt5
-**4. Run the project:
-**
+
+**4. Run the project**
+
+
 go to the bookdetector.py file and right click on it , go to "Run python" option and choose "Run python file in terminal" option to run the project.

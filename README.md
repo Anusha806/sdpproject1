@@ -1,5 +1,7 @@
 **Inventory Image Embedding**
+
 **Description**
+
 The Book Cover Detection module in this project leverages image embedding and Optical Character Recognition (OCR) to identify books based on their cover images. Instead of relying on traditional barcode scanning, this approach extracts textual information directly from the book cover, enabling seamless book identification and retrieval of details such as title, author, year, page count and book id.
 Technologies used:
 
@@ -10,12 +12,15 @@ Pandas
 PyQt5
 
 **Pre-requisite:**
+
 Please ensure you have installed python of version 13.2 or above. You can check your python version using the following commands in command prompt
 python --version
 **Installation Guide:
 1. Clone the Repository:**
-git clone https://code.swecha.org/Charitha.J/inventory-image-embedding
+git clone https://github.com/Anusha806/sdpproject1.git
 cd bookdetector
+
+
 **2. Tesseract SetUp:**
 
 
@@ -33,6 +38,7 @@ tesseract --version
 version of the installed tesseract OCR will be displayed. if the version is not displayed then repeat the above steps carefully once again.
 
 **3. Installation of required dependencies:**
+
 
 After cloning the project, open the project in an IDE(preferably Visual Studio Code).
 Open the project in the terminal and install the dependencies required by using the following commands:
